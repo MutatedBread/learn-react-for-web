@@ -2,6 +2,7 @@
 	"name": "test-app",
 	"version": "0.1.0",
 	"private": true,
+	"homepage": "https://mutatedbread.github.io/learn-react-for-web",
 	"dependencies": {
 		"react": "^16.4.1",
 		"react-dom": "^16.4.1",
@@ -22,6 +23,6 @@
 		"@types/react-dom": "^16.0.6",
 		"gh-pages": "^1.2.0",
 		"prettier": "1.13.7",
-		"typescript": "^2.9.2"
+		"typescript": "^3.0.1"
 	}
 }

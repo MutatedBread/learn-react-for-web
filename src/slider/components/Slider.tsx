@@ -1,6 +1,7 @@
 import * as React from "react";
 import "../styles/Slider.css";
 import Slide from "./Slide";
+import SlideSelector from "./SlideSelector";
 
 export interface ISliderProps {
 	width: string;
@@ -28,7 +29,7 @@ export default class Slider extends React.Component<Props, State> {
 	}
 
 	public render() {
-		const { width, height } = this.props;
+		const { width, height, images } = this.props;
 		const { index } = this.state;
 		return (
 			<div className="MainContainer">
@@ -54,6 +55,11 @@ export default class Slider extends React.Component<Props, State> {
 					>
 						{this.renderCarousel()}
 					</div>
+					<SlideSelector
+						selectedIndex={index}
+						onPress={this.slideSelected}
+						numberOfSlide={images.length}
+					/>
 				</div>
 				<div onClick={this.toRight} className="ButtonContainer">
 					<button className="Button">
@@ -63,6 +69,12 @@ export default class Slider extends React.Component<Props, State> {
 			</div>
 		);
 	}
+
+	public slideSelected = (index: number) => {
+		this.setState((previous: State) => {
+			return { index };
+		});
+	};
 
 	private renderSlide = (url: string, index: number) => {
 		const { width, height } = this.props;

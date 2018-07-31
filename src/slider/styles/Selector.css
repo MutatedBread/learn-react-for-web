@@ -1,0 +1,32 @@
+@keyframes CurrentlySelected {
+	0% {
+		background-color: "white";
+		transform: scale(1);
+	}
+	100% {
+		background-color: #f4d442;
+		transform: scale(1.2);
+	}
+}
+
+@keyframes CurrentlyNotSelected {
+	100% {
+		background-color: "white";
+		transform: scale(1);
+	}
+}
+
+.Selector {
+	width: 25px;
+	height: 25px;
+	background-color: white;
+	border-radius: 12.5px;
+	border: 0px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	animation-duration: 0.25s;
+	animation-fill-mode: forwards;
+}
+
+.Selector:focus {
+	outline: 0px;
+}

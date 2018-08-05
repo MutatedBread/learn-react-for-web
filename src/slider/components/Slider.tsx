@@ -1,4 +1,5 @@
 import * as React from "react";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import "../styles/Slider.css";
 import Slide from "./Slide";
 import SlideSelector from "./SlideSelector";
@@ -33,11 +34,6 @@ export default class Slider extends React.Component<Props, State> {
 		const { index } = this.state;
 		return (
 			<div className="MainContainer">
-				<div onClick={this.toLeft} className="ButtonContainer">
-					<button className="Button">
-						<p>Previous</p>
-					</button>
-				</div>
 				<div
 					style={{
 						height,
@@ -45,6 +41,20 @@ export default class Slider extends React.Component<Props, State> {
 					}}
 					className="CarouselContainer"
 				>
+					<div className="ButtonContainer">
+						<button onClick={this.toLeft} className="Button">
+							<FaAngleLeft
+								style={{ margin: "auto", display: "block", width: "13px" }}
+								size="32px"
+							/>
+						</button>
+						<button onClick={this.toRight} className="Button">
+							<FaAngleRight
+								style={{ margin: "auto", display: "block", width: "13px" }}
+								size="32px"
+							/>
+						</button>
+					</div>
 					<div
 						ref={this.carouselRef}
 						style={{
@@ -60,11 +70,6 @@ export default class Slider extends React.Component<Props, State> {
 						onPress={this.slideSelected}
 						numberOfSlide={images.length}
 					/>
-				</div>
-				<div onClick={this.toRight} className="ButtonContainer">
-					<button className="Button">
-						<p>Next</p>
-					</button>
 				</div>
 			</div>
 		);
@@ -94,7 +99,7 @@ export default class Slider extends React.Component<Props, State> {
 
 	private toLeft = () => {
 		const { index } = this.state;
-		if (index >= 0) {
+		if (index > 0) {
 			this.setState((previous: State) => {
 				return { index: --previous.index };
 			});

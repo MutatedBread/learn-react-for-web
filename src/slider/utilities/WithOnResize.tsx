@@ -1,4 +1,4 @@
-import * as _ from "lodash";
+// import * as _ from "lodash";
 import * as React from "react";
 
 export interface IWithOnResizeProps {
@@ -6,6 +6,8 @@ export interface IWithOnResizeProps {
 	widthFactor: number;
 	heightFactor: number;
 	useWidthForHeight?: boolean;
+	maxWidth?: number;
+	maxHeight?: number;
 }
 
 export interface IWithOnResizeState {
@@ -19,15 +21,13 @@ type State = IWithOnResizeState;
 export default class WithOnResize extends React.Component<Props, State> {
 	constructor(props: Props) {
 		super(props);
-		const nextWidth = window.innerWidth * props.widthFactor;
-		const nextHeight =
-			(props.useWidthForHeight ? window.innerWidth : window.innerHeight) *
-			props.heightFactor;
+		const nextWidth = this.getNextWidth();
+		const nextHeight = this.getNextHeight();
 		this.state = {
 			height: nextHeight,
 			width: nextWidth
 		};
-		this.onResize = _.debounce(this.onResize, 200);
+		// this.onResize = _.debounce(this.onResize, 200);
 	}
 
 	public componentDidMount() {
@@ -41,19 +41,34 @@ export default class WithOnResize extends React.Component<Props, State> {
 	}
 
 	private onResize = () => {
-		const { widthFactor, heightFactor, useWidthForHeight } = this.props;
-		const nextWidth = window.innerWidth * widthFactor;
-		const nextHeight =
-			(useWidthForHeight ? window.innerWidth : window.innerHeight) *
-			heightFactor;
-
-		// tslint:disable-next-line:no-console
-		console.log(useWidthForHeight ? window.innerWidth : window.innerHeight);
+		const nextWidth = this.getNextWidth();
+		const nextHeight = this.getNextHeight();
 		this.setState((previous: State) => {
 			return {
 				height: nextHeight,
 				width: nextWidth
 			};
 		});
+	};
+
+	private getNextWidth = () => {
+		const { maxWidth, widthFactor } = this.props;
+		let nextWidth = document.documentElement.clientWidth * widthFactor;
+		if (maxWidth && nextWidth > maxWidth) {
+			nextWidth = maxWidth;
+		}
+		return nextWidth;
+	};
+
+	private getNextHeight = () => {
+		const { maxHeight, heightFactor, useWidthForHeight } = this.props;
+		let nextHeight =
+			(useWidthForHeight
+				? document.documentElement.clientWidth
+				: document.documentElement.clientHeight) * heightFactor;
+		if (maxHeight && nextHeight > maxHeight) {
+			nextHeight = maxHeight;
+		}
+		return nextHeight;
 	};
 }

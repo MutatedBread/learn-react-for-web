@@ -10,7 +10,7 @@ export interface ISlideSelectorProps {
 
 type Props = ISlideSelectorProps;
 
-export default class SlideSelector extends React.Component<Props> {
+export default class SlideSelector extends React.PureComponent<Props> {
 	constructor(props: Props) {
 		super(props);
 	}

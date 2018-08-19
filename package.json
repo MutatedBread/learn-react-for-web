@@ -28,5 +28,8 @@
 		"gh-pages": "^1.2.0",
 		"prettier": "1.13.7",
 		"typescript": "^3.0.1"
-	}
+	},
+	"browserslist": [
+		"> 0.1%"
+	]
 }

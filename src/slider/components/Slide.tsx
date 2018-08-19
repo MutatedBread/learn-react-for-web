@@ -7,17 +7,9 @@ export interface ISlideProps {
 	width: string;
 }
 
-// tslint:disable-next-line:no-empty-interface
-export interface ISlideState {}
-
 type Props = ISlideProps;
-type State = ISlideState;
 
-export default class Slide extends React.Component<Props, State> {
-	constructor(props: Props) {
-		super(props);
-	}
-
+export default class Slide extends React.PureComponent<Props> {
 	public render() {
 		const { url, width, height } = this.props;
 		return (

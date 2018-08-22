@@ -1,12 +1,24 @@
-.SlideSelectorContainer {
+.Slider-Slide-Selectors-Container {
 	position: relative;
 	bottom: 50px;
 	width: 100%;
-	height: 30px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
+	height: fit-content;
+	display: block;
 	z-index: 100;
-	align-self: stretch;
+	text-align: center;
+}
+.Slider-Slide-Selector-Container {
+	display: inline-block;
+	height: fit-content;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+@media only screen and (max-width: 600px) {
+	.Slider-Slide-Selectors-Container {
+		bottom: 30px;
+	}
+	.Slider-Slide-Selector-Container {
+		margin-left: 8px;
+		margin-right: 8px;
+	}
 }

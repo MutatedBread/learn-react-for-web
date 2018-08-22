@@ -13,11 +13,11 @@ export default class Selector extends React.Component<Props> {
 	public render() {
 		const { isSelected } = this.props;
 		const animationName = isSelected
-			? "CurrentlySelected"
-			: "CurrentlyNotSelected";
+			? "Slider-Slide-CurrentlySelected"
+			: "Slider-Slide-CurrentlyNotSelected";
 		return (
 			<button
-				className="Selector"
+				className="Slider-Slide-Selector"
 				style={{
 					animationName
 				}}

@@ -13,13 +13,23 @@ export default class SliderButtonContainer extends React.PureComponent<Props> {
 	public render() {
 		const { leftButtonOnPress, rightButtonOnPress } = this.props;
 		return (
-			<div className="Slider-ButtonContainer">
-				<button onClick={leftButtonOnPress} className="Slider-Button">
-					<FaAngleLeft className="Slider-Button-Icon" size="32px" />
-				</button>
-				<button onClick={rightButtonOnPress} className="Slider-Button">
-					<FaAngleRight className="Slider-Button-Icon" size="32px" />
-				</button>
+			<div className="Slider-Buttons-Container">
+				<div className="Slider-Button-Container">
+					<button
+						onClick={leftButtonOnPress}
+						className="Slider-Button Slider-Button-Left"
+					>
+						<FaAngleLeft className="Slider-Button-Icon" size="32px" />
+					</button>
+				</div>
+				<div className="Slider-Button-Container">
+					<button
+						onClick={rightButtonOnPress}
+						className="Slider-Button Slider-Button-Right"
+					>
+						<FaAngleRight className="Slider-Button-Icon" size="32px" />
+					</button>
+				</div>
 			</div>
 		);
 	}

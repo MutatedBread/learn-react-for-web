@@ -1,4 +1,5 @@
 .Slider-Carousel {
-	display: flex;
-	flex-direction: row;
+	display: block;
+	width: fit-content;
+	white-space: nowrap;
 }

@@ -1,7 +1,5 @@
 .App {
 	text-align: center;
-	justify-content: center;
-	align-items: center;
 }
 
 .App-header {
@@ -9,11 +7,11 @@
 	height: 150px;
 	color: white;
 	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	display: table;
 }
 
 .App-title {
 	font-size: 1.5em;
+	display: table-cell;
+	vertical-align: middle;
 }

@@ -1,3 +1,5 @@
-.Slide {
+.Slider-Slide {
 	margin-left: 0px;
+	display: inline-block;
+	height: fit-content;
 }

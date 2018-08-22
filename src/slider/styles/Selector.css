@@ -1,4 +1,4 @@
-@keyframes CurrentlySelected {
+@keyframes Slider-Slide-CurrentlySelected {
 	0% {
 		background-color: "white";
 		transform: scale(1);
@@ -9,14 +9,14 @@
 	}
 }
 
-@keyframes CurrentlyNotSelected {
+@keyframes Slider-Slide-CurrentlyNotSelected {
 	100% {
 		background-color: "white";
 		transform: scale(1);
 	}
 }
 
-.Selector {
+.Slider-Slide-Selector {
 	width: 25px;
 	height: 25px;
 	background-color: white;
@@ -27,6 +27,14 @@
 	animation-fill-mode: forwards;
 }
 
-.Selector:focus {
+.Slider-Slide-Selector:focus {
 	outline: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+	.Slider-Slide-Selector {
+		width: 20px;
+		height: 20px;
+		border-radius: 10px;
+	}
 }

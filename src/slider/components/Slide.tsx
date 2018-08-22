@@ -13,7 +13,7 @@ export default class Slide extends React.PureComponent<Props> {
 	public render() {
 		const { url, width, height } = this.props;
 		return (
-			<div className="Slide" style={{ width, height }}>
+			<div className="Slider-Slide">
 				<img style={{ width, height }} src={url} />
 			</div>
 		);

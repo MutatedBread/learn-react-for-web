@@ -1,7 +1,7 @@
-.MainContainer {
+.Slider-Main-Container {
 	display: inline-block;
 }
-.CarouselContainer {
+.Slider-Carousel-Container {
 	overflow: hidden;
 	position: relative;
 	display: inline-block;

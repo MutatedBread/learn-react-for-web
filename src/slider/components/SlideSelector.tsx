@@ -17,7 +17,7 @@ export default class SlideSelector extends React.PureComponent<Props> {
 
 	public render() {
 		return (
-			<div className="SlideSelectorContainer">
+			<div className="Slider-Slide-Selectors-Container">
 				{this.renderSlideSelectors()}
 			</div>
 		);
@@ -28,12 +28,13 @@ export default class SlideSelector extends React.PureComponent<Props> {
 		const selectors = [] as JSX.Element[];
 		for (let i = 0; i < numberOfSlide; i++) {
 			selectors.push(
-				<Selector
-					key={`Selector-${i}`}
-					index={i}
-					isSelected={selectedIndex === i}
-					onPress={this.props.onPress}
-				/>
+				<div key={`Selector-${i}`} className="Slider-Slide-Selector-Container">
+					<Selector
+						index={i}
+						isSelected={selectedIndex === i}
+						onPress={this.props.onPress}
+					/>
+				</div>
 			);
 		}
 		return selectors;

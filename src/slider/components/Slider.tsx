@@ -46,13 +46,13 @@ export default class Slider extends React.Component<Props, State> {
 		const { width, height, images } = this.props;
 		const { index, offsetX } = this.state;
 		return (
-			<div style={{ maxWidth: width }} className="MainContainer">
+			<div style={{ maxWidth: width }} className="Slider-Main-Container">
 				<div
 					style={{
 						height,
 						maxWidth: width
 					}}
-					className="CarouselContainer"
+					className="Slider-Carousel-Container"
 					onMouseDown={this.onMouseStart}
 					onMouseMove={this.onMouseMove}
 					onMouseUp={this.onMouseEnd}

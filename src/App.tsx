@@ -30,6 +30,21 @@ class App extends Component {
 								"https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12225919/Pembroke-Welsh-Corgi-On-White-01.jpg",
 								"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Welchcorgipembroke.JPG/1200px-Welchcorgipembroke.JPG"
 							]}
+							selectorStyle={{
+								backgroundColor: "blue",
+								height: "50px",
+								width: "50px"
+							}}
+							slideStyle={{
+								borderRadius: "100px"
+							}}
+							selectorContainerStyle={{
+								bottom: "80px"
+							}}
+							carouselStyle={{
+								borderColor: "black",
+								borderWidth: "10px"
+							}}
 						/>
 					)}
 				</WithOnResize>

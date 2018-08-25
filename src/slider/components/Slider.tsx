@@ -1,10 +1,22 @@
 import * as React from "react";
+import {
+	ISlideExtraProps,
+	ISliderButtonContainerExtraProps,
+	ISliderCarouselExtraProps,
+	ISliderSelectorContainerExtraProps,
+	ISlideSelectorExtraProps
+} from "../model";
 import "../styles/Slider.css";
 import SliderButtonContainer from "./SliderButtonContainer";
 import SliderCarousel from "./SliderCarousel";
 import SlideSelector from "./SlideSelector";
 
-export interface ISliderProps {
+export interface ISliderProps
+	extends ISliderButtonContainerExtraProps,
+		ISlideSelectorExtraProps,
+		ISlideExtraProps,
+		ISliderSelectorContainerExtraProps,
+		ISliderCarouselExtraProps {
 	width: number;
 	height: number;
 	images: string[];
@@ -43,14 +55,26 @@ export default class Slider extends React.Component<Props, State> {
 	}
 
 	public render() {
-		const { width, height, images } = this.props;
+		const {
+			width,
+			height,
+			images,
+			directionButtonStyle,
+			leftDirectionButtonElement,
+			rightDirectionButtonElement,
+			selectorStyle,
+			slideStyle,
+			selectorContainerStyle,
+			carouselStyle
+		} = this.props;
 		const { index, offsetX } = this.state;
 		return (
 			<div style={{ maxWidth: width }} className="Slider-Main-Container">
 				<div
 					style={{
 						height,
-						maxWidth: width
+						maxWidth: width,
+						...carouselStyle
 					}}
 					className="Slider-Carousel-Container"
 					onMouseDown={this.onMouseStart}
@@ -65,6 +89,9 @@ export default class Slider extends React.Component<Props, State> {
 					<SliderButtonContainer
 						leftButtonOnPress={this.toLeft}
 						rightButtonOnPress={this.toRight}
+						directionButtonStyle={directionButtonStyle}
+						leftDirectionButtonElement={leftDirectionButtonElement}
+						rightDirectionButtonElement={rightDirectionButtonElement}
 					/>
 					<SliderCarousel
 						height={height}
@@ -72,11 +99,14 @@ export default class Slider extends React.Component<Props, State> {
 						images={images}
 						offsetX={offsetX}
 						index={index}
+						slideStyle={slideStyle}
 					/>
 					<SlideSelector
 						selectedIndex={index}
 						onPress={this.slideSelected}
+						selectorContainerStyle={selectorContainerStyle}
 						numberOfSlide={images.length}
+						selectorStyle={selectorStyle}
 					/>
 				</div>
 			</div>

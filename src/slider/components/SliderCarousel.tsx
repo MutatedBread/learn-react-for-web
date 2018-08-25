@@ -1,9 +1,10 @@
 import * as React from "react";
+import { ISlideExtraProps } from "../model";
 import "../styles/SliderCarousel.css";
 import Slide from "./Slide";
 
 // tslint:disable-next-line:no-empty-interface
-export interface ISliderCarouserProps {
+export interface ISliderCarouselProps extends ISlideExtraProps {
 	images: string[];
 	index: number;
 	height: number;
@@ -11,7 +12,7 @@ export interface ISliderCarouserProps {
 	offsetX: number;
 }
 
-type Props = ISliderCarouserProps;
+type Props = ISliderCarouselProps;
 
 export default class SliderCarousel extends React.PureComponent<Props> {
 	public render() {
@@ -39,13 +40,14 @@ export default class SliderCarousel extends React.PureComponent<Props> {
 	};
 
 	private renderSlide = (url: string, index: number) => {
-		const { width, height } = this.props;
+		const { width, height, slideStyle } = this.props;
 		return (
 			<Slide
 				key={`Slider-${index}`}
 				url={url}
 				width={`${width}px`}
 				height={`${height}px`}
+				slideStyle={slideStyle}
 			/>
 		);
 	};

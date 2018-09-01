@@ -11,11 +11,10 @@
 		"react-scripts-ts": "2.16.0"
 	},
 	"scripts": {
-		"build": "tsc && cp ~R slider/styles dist/styles",
-		"predeploy": "npm run build",
-		"deploy": "gh-pages -d build",
-		"docz:dev": "docz dev",
-		"docz:build": "docz build"
+		"dev_docs": "docz dev",
+		"build_docs": "docz build",
+		"build_slider": "tsc && cp ~R slider/styles dist/styles",
+		"deploy_docs": "gh-pages -d docz/dist"
 	},
 	"devDependencies": {
 		"@types/jest": "^23.3.0",

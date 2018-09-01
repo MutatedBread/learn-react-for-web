@@ -1,4 +1,6 @@
 export default {
+	title: "Doc",
+	description: "Documentation for react-simple-image-carousel",
 	typescript: true,
 	hashRouter: true,
 	base: "/react-simple-image-carousel/",

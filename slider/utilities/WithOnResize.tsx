@@ -15,11 +15,11 @@ export interface IWithOnResizeState {
 	height: number;
 }
 
-type Props = IWithOnResizeProps;
-type State = IWithOnResizeState;
-
-export default class WithOnResize extends React.Component<Props, State> {
-	constructor(props: Props) {
+export default class WithOnResize extends React.Component<
+	IWithOnResizeProps,
+	IWithOnResizeState
+> {
+	constructor(props: IWithOnResizeProps) {
 		super(props);
 		const nextWidth = this.getNextWidth();
 		const nextHeight = this.getNextHeight();
@@ -43,7 +43,7 @@ export default class WithOnResize extends React.Component<Props, State> {
 	private onResize = () => {
 		const nextWidth = this.getNextWidth();
 		const nextHeight = this.getNextHeight();
-		this.setState((previous: State) => {
+		this.setState((previous: IWithOnResizeState) => {
 			return {
 				height: nextHeight,
 				width: nextWidth

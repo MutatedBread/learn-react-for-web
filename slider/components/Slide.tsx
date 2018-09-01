@@ -8,9 +8,7 @@ export interface ISlideProps extends ISlideExtraProps {
 	width: string;
 }
 
-type Props = ISlideProps;
-
-export default class Slide extends React.PureComponent<Props> {
+export default class Slide extends React.PureComponent<ISlideProps> {
 	public render() {
 		const { url, width, height, slideStyle } = this.props;
 		return (

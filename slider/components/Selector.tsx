@@ -8,9 +8,7 @@ export interface ISelectorProps extends ISlideSelectorExtraProps {
 	isSelected: boolean;
 }
 
-type Props = ISelectorProps;
-
-export default class Selector extends React.Component<Props> {
+export default class Selector extends React.Component<ISelectorProps> {
 	public render() {
 		const { isSelected, selectorStyle } = this.props;
 		const defautlStyle = selectorStyle ? "" : "Slider-Slide-Selector";

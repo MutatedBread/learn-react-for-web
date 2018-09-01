@@ -11,10 +11,9 @@ export interface ISliderCarouselProps extends ISlideExtraProps {
 	width: number;
 	offsetX: number;
 }
-
-type Props = ISliderCarouselProps;
-
-export default class SliderCarousel extends React.PureComponent<Props> {
+export default class SliderCarousel extends React.PureComponent<
+	ISliderCarouselProps
+> {
 	public render() {
 		const { height, width, index, offsetX } = this.props;
 		return (

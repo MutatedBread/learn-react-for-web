@@ -33,17 +33,17 @@ export interface ISliderState {
 	dragStartTime: Date;
 }
 
-type Props = ISliderProps;
-type State = ISliderState;
-
-export default class Slider extends React.Component<Props, State> {
+export default class Slider extends React.Component<
+	ISliderProps,
+	ISliderState
+> {
 	public static defaultProps = {
 		maxSwipeThreshold: 100,
 		minSwipeThreshold: 50,
 		swipeTimeThreshold: 200
 	};
 
-	constructor(props: Props) {
+	constructor(props: ISliderProps) {
 		super(props);
 		this.state = {
 			dragStartTime: new Date(),
@@ -114,7 +114,7 @@ export default class Slider extends React.Component<Props, State> {
 	}
 
 	public slideSelected = (index: number) => {
-		this.setState((previous: State) => {
+		this.setState((previous: ISliderState) => {
 			return { index };
 		});
 	};
@@ -147,7 +147,7 @@ export default class Slider extends React.Component<Props, State> {
 
 	private onSwipeStart = (startPoint: number) => {
 		const x = startPoint;
-		this.setState((previous: State) => {
+		this.setState((previous: ISliderState) => {
 			return {
 				dragStartTime: new Date(),
 				dragging: true,
@@ -167,7 +167,7 @@ export default class Slider extends React.Component<Props, State> {
 			!isSwipingLeftAtFirstSlide &&
 			!isSwipingRightAtLastSlide
 		) {
-			this.setState((previous: State) => {
+			this.setState((previous: ISliderState) => {
 				return { offsetX };
 			});
 		}
@@ -217,7 +217,7 @@ export default class Slider extends React.Component<Props, State> {
 				}
 			}
 
-			this.setState((previous: State) => {
+			this.setState((previous: ISliderState) => {
 				return {
 					dragging: false,
 					index: nextIndex,
@@ -226,7 +226,7 @@ export default class Slider extends React.Component<Props, State> {
 				};
 			});
 		} else {
-			this.setState((previous: State) => {
+			this.setState((previous: ISliderState) => {
 				return {
 					dragging: false,
 					startingX: 0
@@ -238,7 +238,7 @@ export default class Slider extends React.Component<Props, State> {
 	private toLeft = () => {
 		const { index } = this.state;
 		if (index > 0) {
-			this.setState((previous: State) => {
+			this.setState((previous: ISliderState) => {
 				return { index: --previous.index };
 			});
 		}
@@ -248,7 +248,7 @@ export default class Slider extends React.Component<Props, State> {
 		const { index } = this.state;
 		const { images } = this.props;
 		if (index < images.length - 1) {
-			this.setState((previous: State) => {
+			this.setState((previous: ISliderState) => {
 				return { index: ++previous.index };
 			});
 		}

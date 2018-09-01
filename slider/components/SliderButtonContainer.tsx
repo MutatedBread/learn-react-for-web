@@ -9,9 +9,9 @@ export interface ISliderButtonContainerProps
 	rightButtonOnPress: () => any;
 }
 
-type Props = ISliderButtonContainerProps;
-
-export default class SliderButtonContainer extends React.PureComponent<Props> {
+export default class SliderButtonContainer extends React.PureComponent<
+	ISliderButtonContainerProps
+> {
 	public render() {
 		const {
 			leftButtonOnPress,

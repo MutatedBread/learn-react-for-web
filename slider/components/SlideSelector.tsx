@@ -13,11 +13,10 @@ export interface ISlideSelectorProps
 	selectedIndex: number;
 	onPress: (index: number) => void;
 }
-
-type Props = ISlideSelectorProps;
-
-export default class SlideSelector extends React.PureComponent<Props> {
-	constructor(props: Props) {
+export default class SlideSelector extends React.PureComponent<
+	ISlideSelectorProps
+> {
+	constructor(props: ISlideSelectorProps) {
 		super(props);
 	}
 

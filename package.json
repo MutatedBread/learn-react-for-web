@@ -7,14 +7,13 @@
 		"lodash": "^4.17.10",
 		"react": "^16.4.1",
 		"react-dom": "^16.4.1",
-		"react-icons": "^3.0.4",
-		"react-scripts-ts": "2.16.0"
+		"react-icons": "^3.0.4"
 	},
 	"scripts": {
 		"dev_docs": "docz dev",
 		"build_docs": "docz build",
 		"build_slider": "tsc",
-		"deploy_docs": "gh-pages -d docz/dist"
+		"deploy_docs": "gh-pages -d .docz/dist"
 	},
 	"devDependencies": {
 		"@types/jest": "^23.3.0",
@@ -26,7 +25,6 @@
 		"docz": "^0.10.3",
 		"docz-plugin-css": "^0.10.3",
 		"docz-theme-default": "^0.10.3",
-		"gh-pages": "^1.2.0",
 		"prettier": "1.13.7",
 		"typescript": "^3.0.1"
 	}

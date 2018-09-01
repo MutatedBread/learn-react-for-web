@@ -6,6 +6,8 @@ before_install:
   - export PATH="$HOME/.yarn/bin:$PATH"
 install:
   - yarn install
+before_script:
+  - mkdir dist/styles
 script:
   - yarn build_slider
   - yarn build_docs

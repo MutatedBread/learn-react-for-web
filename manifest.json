@@ -1,9 +1,9 @@
 {
-  "vendors.js": "https://mutatedbread.github.io/react-simple-image-carousel/static/js/vendors.b76f3c3e.js",
-  "app.js": "https://mutatedbread.github.io/react-simple-image-carousel/static/js/app.c391a13e.js",
-  "docs-customization.js": "https://mutatedbread.github.io/react-simple-image-carousel/static/js/docs-customization.06ff34d1.js",
-  "docs-index.js": "https://mutatedbread.github.io/react-simple-image-carousel/static/js/docs-index.56f98b7c.js",
-  "docs-withonresize.js": "https://mutatedbread.github.io/react-simple-image-carousel/static/js/docs-withonresize.7025ed04.js",
-  "runtime~app.js": "https://mutatedbread.github.io/react-simple-image-carousel/static/js/runtime~app.de1b89c4da4c058c44d5.js",
-  "index.html": "https://mutatedbread.github.io/react-simple-image-carousel/index.html"
+  "vendors.js": "/static/js/vendors.3415ae59.js",
+  "app.js": "/static/js/app.3535b896.js",
+  "docs-customization.js": "/static/js/docs-customization.06ff34d1.js",
+  "docs-index.js": "/static/js/docs-index.56f98b7c.js",
+  "docs-withonresize.js": "/static/js/docs-withonresize.7025ed04.js",
+  "runtime~app.js": "/static/js/runtime~app.b6b5caca2706bc02946d.js",
+  "index.html": "/index.html"
 }

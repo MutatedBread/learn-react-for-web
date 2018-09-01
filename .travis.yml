@@ -7,7 +7,7 @@ before_install:
 install:
   - yarn install
 before_script:
-  - mk dist
+  - mkdir dist
   - mkdir dist/styles
 script:
   - yarn build_slider

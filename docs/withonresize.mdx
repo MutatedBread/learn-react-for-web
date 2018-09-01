@@ -1,0 +1,78 @@
+---
+name: WithOnResize
+route: /withonresize
+order: 3
+---
+
+import WithOnResize from "../slider/utilities/WithOnResize.tsx";
+import Slider from "../slider/components/Slider.tsx";
+import {Playground} from "docz";
+
+# WithOnResize Utility
+
+WithOnResize is an utility that helps you to scale the carousel to full width and height according to the page.
+You can also specify a max height and width if the screen size becomes too big.
+
+```
+import {WithOnResize} from "react-simple-image-carousel";
+```
+
+## Example
+<Playground>
+    <WithOnResize
+        widthFactor={1}
+        heightFactor={2 / 3}
+        useWidthForHeight={true}
+        maxHeight={540}
+        maxWidth={720}
+    >
+        {(width, height) => (
+            <Slider
+                width={width}
+                height={height}
+                maxSwipeThreshold={width * 0.15}
+                minSwipeThreshold={40}
+                swipeTimeThreshold={200}
+                images={[
+                    "https://www.chewy.com/petcentral/wp-content/uploads/2018/05/lucky-corgi-butts-x-596-444x.jpg",
+                    "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12225919/Pembroke-Welsh-Corgi-On-White-01.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Welchcorgipembroke.JPG/1200px-Welchcorgipembroke.JPG"
+                ]}
+                selectorStyle={{
+                    backgroundColor: "blue",
+                    height: "50px",
+                    width: "50px"
+                }}
+                slideStyle={{
+                    borderRadius: "100px"
+                }}
+                selectorContainerStyle={{
+                    bottom: "80px"
+                }}
+                carouselStyle={{
+                    borderColor: "black",
+                    borderWidth: "10px"
+                }}
+            />
+        )}
+    </WithOnResize>
+</Playground>
+
+## WithOnResize Props
+### Props Table
+| Prop Name | Required Level | Type |
+| --- | --- | --- |
+| widthFactor | Needed | number | 
+| heightFactor | Needed | number | 
+| useWidthForHeight | Optional | boolean | 
+| maxWidth | Optional | number | 
+| maxHeight | Optional | number | 
+
+### Props Explaination
+| Prop Name | Explaination |
+| --- | --- |
+| widthFactor | Width factor of the screen width. `1` means full width | 
+| heightFactor | Height factor of the screen height. `1` means full height | 
+| useWidthForHeight | Use value of width as height | 
+| maxWidth | Maximun width the underlying component will receive | 
+| maxHeight | Maximun height the underlying component will receive | 

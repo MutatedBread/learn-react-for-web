@@ -1,0 +1,129 @@
+---
+name:  Customization
+route:  /customization
+order: 2
+---
+
+import Slider from "../slider/components/Slider.tsx";
+import {Playground} from "docz";
+
+# Customization
+
+You can refer to props described below to customize the slider.
+
+## Example
+
+<Playground>
+    <Slider
+        width={500}
+        height={250}
+        maxSwipeThreshold={500 * 0.15}
+        minSwipeThreshold={40}
+        swipeTimeThreshold={200}
+        images={[
+            "https://www.chewy.com/petcentral/wp-content/uploads/2018/05/lucky-corgi-butts-x-596-444x.jpg",
+            "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12225919/Pembroke-Welsh-Corgi-On-White-01.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Welchcorgipembroke.JPG/1200px-Welchcorgipembroke.JPG"
+        ]}
+        selectorStyle={{
+            backgroundColor: "blue",
+            height: "50px",
+            width: "50px"
+        }}
+        slideStyle={{
+            borderRadius: "100px"
+        }}
+        selectorContainerStyle={{
+            bottom: "80px"
+        }}
+        carouselStyle={{
+            borderColor: "black",
+            borderWidth: "10px"
+        }}
+    />
+</Playground>
+
+## Props
+
+Slider Component accepts props from all classes below.
+
+### Main Props
+#### Props Table
+| Prop Name | Required Level | Type |
+| --- | --- | --- |
+| width | Needed |  number |
+| height | Needed |  number |
+| images | Needed |  string[] |
+| maxSwipeThreshold | Optional |  number |
+| minSwipeThreshold | Optional |  number |
+| swipeTimeThreshold | Optional |  number |
+
+#### Props Explaination
+| Prop Name | Explaination |
+| --- | --- |
+| width | Widht of the carousel |
+| height | Height of the carousel |
+| images | String array of image urls |
+| maxSwipeThreshold | Maximun pixel swipe by user to trigger a swipe action |
+| minSwipeThreshold | Used with `swipeTimeThreshold`, if the user swipe such `minSwipeThreshold` amount of pixel within `swipeTimeThreshold` milliseconds, a swipe action is triggered |
+| swipeTimeThreshold | Milliseconds. Used with `swipeTimeThreshold`, if the user swipe such `minSwipeThreshold` amount of pixel within `swipeTimeThreshold` milliseconds, a swipe action is triggered |
+
+### Buttons Props
+#### Props Table
+| Prop Name | Required Level | Type |
+| --- | --- | --- |
+| directionButtonStyle | Optional |  React.CSSProperties |
+| leftDirectionButtonElement | Optional |  React.ReactElement OR JSX.Element |
+| rightDirectionButtonElement | Optional |  React.ReactElement OR JSX.Element |
+
+#### Props Explaination
+#### Props Table
+| Prop Name | Explaination |
+| --- | --- |
+| directionButtonStyle | CSS Styles for the left and right direction buttons |
+| leftDirectionButtonElement | JSX Element to replace the default left directional button |
+| rightDirectionButtonElement | JSX Element to replace the default right directional button |
+
+### Image Carousel Props
+#### Props Table
+| Prop Name | Required Level | Type |
+| --- | --- | --- |
+| carouselStyle | Optional |  React.CSSProperties |
+
+#### Props Explaination
+| Prop Name | Explaination |
+| --- | --- |
+| carouselStyle | CSS Styles for the image carousel |
+
+### Selector Container Props
+#### Props Table
+| Prop Name | Required Level | Type |
+| --- | --- | --- |
+| selectorContainerStyle | Optional |  React.CSSProperties |
+
+#### Props Explaination
+| Prop Name | Explaination |
+| --- | --- |
+| selectorContainerStyle | CSS Styles for the containers of slide selectors |
+
+### Selector Props
+#### Props Table
+| Prop Name | Required Level | Type |
+| --- | --- | --- |
+| selectorStyle | Optional |  React.CSSProperties |
+
+#### Props Explaination
+| Prop Name | Explaination |
+| --- | --- |
+| selectorStyle | CSS Style for slide selectors |
+
+### Slider Props
+#### Props Table
+| Prop Name | Required Level | Type |
+| --- | --- | --- |
+| slideStyle | Optional |  React.CSSProperties 
+|
+#### Props Explaination
+| Prop Name | Explaination |
+| --- | --- |
+| slideStyle | CSS Styles for slide component |

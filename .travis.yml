@@ -11,4 +11,13 @@ before_script:
   - mkdir dist/styles
 script:
   - yarn build_slider
+  - cp -a slider/styles/. dist/styles
   - yarn build_docs
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local-dir: docz/dist
+  on:
+    branch: master

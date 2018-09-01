@@ -13,7 +13,7 @@
 	"scripts": {
 		"dev_docs": "docz dev",
 		"build_docs": "docz build",
-		"build_slider": "tsc && cp ~R slider/styles dist/styles",
+		"build_slider": "tsc",
 		"deploy_docs": "gh-pages -d docz/dist"
 	},
 	"devDependencies": {

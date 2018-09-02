@@ -6,12 +6,13 @@ before_install:
   - export PATH="$HOME/.yarn/bin:$PATH"
 install:
   - yarn install
+  - yarn global add gulp-cli
 before_script:
   - mkdir dist
   - mkdir dist/styles
 script:
   - yarn build_slider
-  - cp -a slider/styles/. dist/styles
+  - gulp
   - yarn build_docs
 deploy:
   - provider: pages

@@ -2,7 +2,7 @@
 
 react-simple-image-carousel is a image carousel component for react.
 
-![demo.png](./docs/demo.png)
+![demo.png](https://raw.githubusercontent.com/MutatedBread/react-simple-image-carousel/master/docs/demo.png)
 
 You can customize :
 

@@ -19,8 +19,10 @@ deploy:
     github-token: $GITHUB_TOKEN
     keep-history: true
     local-dir: .docz/dist
+    on:
+      branch: release
   - provider: npm
     email: "mutatedbread@gmail.com"
     api_key: $NPM_TOKEN
-  on:
-    branch: release
+    on:
+      branch: release

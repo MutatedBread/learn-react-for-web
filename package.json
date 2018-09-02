@@ -1,6 +1,6 @@
 {
 	"name": "react-simple-image-carousel",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "A simple react swipable image carousel",
 	"main": "dist/index.js",
 	"homepage": "https://mutatedbread.github.io/react-simple-image-carousel",
